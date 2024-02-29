@@ -13,3 +13,10 @@ cust_df.head()
 # we donot need Address here(base of our data)
 df = cust_df.drop('Address', axis=1)
 df.head()
+
+# normilizing
+from sklearn.preprocessing import StandardScaler
+X = df.values[:,1:]
+X = np.nan_to_num(X)
+Clus_dataSet = StandardScaler().fit_transform(X)
+Clus_dataSet
