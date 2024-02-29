@@ -28,3 +28,7 @@ k_means.fit(Clus_dataSet)
 labels = k_means.labels_
 print(labels)
 
+# insights
+df["Clus_km"] = labels
+df.head(5)
+df.groupby('Clus_km').mean()
